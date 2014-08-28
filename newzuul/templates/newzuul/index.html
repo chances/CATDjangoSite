@@ -17,9 +17,9 @@
                         <li id="negativebank" class="list-group-item"> <a href="/newzuul/{{ person.id }}/purchase/"> <button type="button" class="btn btn-default btn-success" style="background-color: rgb(1, 90, 107)"> <span class="personname"> {{ person.name }} </span> </button> </a> <span class="shortdescription"> Has a bank of:</span> <span class="personbank"> ${{ person.bank }} </span></li>
                 {% endif %}
             {% endfor %}
-            <li id="positivebank" class="list-group-item">
+            <li id="negativebank" class="list-group-item"> <a href="/newzuul/adduser/"> <button class="btn btn-default btn-primary">
                 Add a new person button here!
-            </li>
+            </button> </li>
         </ul>
     </div>
 
@@ -31,6 +31,9 @@
             {% for item in item_list %}
                 <li id="consumable" class="list-group-item"> <span class="personname"> {{ item.name }} </span> <span class="shortdescription"> Is priced at:</span> <span class="personbank"> ${{ item.price }} </span></li>
             {% endfor %}
+            <li id="negativebank" class="list-group-item"> <a href="/newzuul/additem/"> <button class="btn btn-default btn-primary">
+                The Keymaster may add a new item here
+            </button> </a> </li>
         </ul>
     </div>
 {% endblock content %}

@@ -1,0 +1,34 @@
+{% extends "newzuul/base.html" %}
+
+{% block header %}
+    <p> Hiya, so... you want to add an item to the zuul, eh? </p>
+{% endblock header %}
+
+{% block content %}
+    <div class="col-md-6 col-md-offset-0">
+        <ul class="list-group">
+            <form action="{% url 'newzuul:additemaction' %}" method="post">
+            {% csrf_token %}
+                <div class="input-group">
+                    <span class="input-group-addon"> Are you the Key Master? o.O </span>
+                    <input type="text" name="keymastername" class="form-control">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"> I am the Gate Keeper >:( </span>
+                    <input type="password" min="0" max="99" name="gatekeeperpassword" class="form-control">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"> Items name: </span>
+                    <input type="text" name="new_item_name" class="form-control">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"> Items Price (from $0.0 to $999.99): </span>
+                    <input type="float" name="new_item_price" class="form-control" value="0.0">
+                </div>
+                <button type="submit" class="btn btn-default btn-primary">
+                    Add this Item!!!
+                </button>
+            </form>
+        </ul>
+    </div>
+{% endblock content %}
