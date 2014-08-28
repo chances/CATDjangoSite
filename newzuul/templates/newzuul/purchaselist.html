@@ -1,0 +1,53 @@
+{% extends "newzuul/base.html" %}
+
+{% block header %}
+    <p> This is the purchase page for {{ person.name }}, your bank is ${{ person.bank }} </p>
+{% endblock header %}
+
+{% block content %}
+    <div class="col-md-6 col-md-offset-0">
+        <ul class="list-group">
+            <li class="list-group-item">
+                I would like to purchase:
+            </li>
+
+            <form action="{% url 'newzuul:purchaseaction' person.id %}" method="post">
+            {% csrf_token %}
+                {% for item in item_list %}
+                    <div class="input-group">
+                        <span class="input-group-addon" class="personname"> {{ item.name }}:  ${{ item.price }}, Ammount:</span>
+                        <input type="number" min="0" max="99" name="{{ item.id }}" class="form-control" value="0">
+                    </div>
+                {% endfor %}
+
+        </ul>
+    </div>
+
+    <div class="col-md-6 col-md-offset-0">
+        <p class="TOG">
+            As a member of the CAT, a friend of the CAT, or other represenative
+            given access to this website, I do solumly swear the following:
+        <p>
+        <ol>
+            <li class="TOG">
+                Yes, I am ther person purchasing this zuulfood (or the person
+                who owns this account has given me EXPLICIT rights to purchase
+                for myself or them on their behalf)
+            </li>
+            <li class="TOG">
+                I do fully intend on paying the zuulmaster bank for this food
+                either before, during, or after ordering on this website
+            </li>
+            <li class="TOG">
+                I am very gratefull of this open policy, and will NOT take
+                advantage of it, less the zuul run empty and I will be to
+                blame
+            </li>
+        </ol>
+
+        <button type="submit" class="btn btn-default btn-success">
+            Purchase these items!
+        </button>
+            </form>
+    </div>
+{% endblock content %}
