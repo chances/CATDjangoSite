@@ -1,0 +1,50 @@
+{% extends "newzuul/base.html" %}
+
+{% block header %}
+    <p> Hiya, so... you want to add an item to the zuul, eh? </p>
+{% endblock header %}
+
+{% block content %}
+    <div class="col-md-6 col-md-offset-0">
+        <ul class="list-group">
+            <form action="{% url 'newzuul:adduseraction' %}" method="post">
+            {% csrf_token %}
+                <div class="input-group">
+                    <span class="input-group-addon"> Soooo, what's your name?: </span>
+                    <input type="text" name="new_user_name" class="form-control">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"> How much did you put in initially? (from $0.0 to $999.99): </span>
+                    <input ng type="float" name="new_user_bank" class="form-control" value="0.0">
+                </div>
+                <p class="TOG">
+                    Soooo, we have to talk about a few things:
+                </p>
+                <ol>
+                    <li class="TOG">
+                        Listen, the zuul is a place where we trust each other, if you put money in, we trust you. But
+                        if you didn't put money in; please DON'T claim you did. You are allowed to have a negative
+                        balance.
+                    </li>
+                    <li class="TOG">
+                        Good point about negative ballances, if you have a negative ballance, PLEASE pay if off before
+                        the next zuul run. The Zuulmaster needs that money to buy more things, without this, we don't
+                        have a zuul!!!
+                    </li>
+                    <li class="TOG">
+                        So lets review: Please only add money to your account if you actually dropped money in the
+                        zuul bank. Pleas pay off negative ballances before the next zuul run. And if enought people
+                        DON'T follow these rules, the zuul can't exist.
+                    </li>
+                    <li class="TOG">
+                        We trust that EVERYONE follows these rules. Take that seriously before hitting the agree
+                        to the terms and agreements button...
+                    </li>
+                </ol>
+                <button type="submit" class="btn btn-default btn-primary">
+                    I agree to these terms and agreements
+                </button>
+            </form>
+        </ul>
+    </div>
+{% endblock content %}

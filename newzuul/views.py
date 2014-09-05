@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from newzuul.models import consumer, items
+import json
 
 # Create your views here.
 
@@ -50,7 +51,7 @@ def purchaseaction(request, user_id):
     except (ValueError):
         return HttpResponse(" he's dead Jim (ValueError on person object)")
     else:
-        for key in request.POST:
+        for key in request:
             if key == "csrfmiddlewaretoken":
                 continue
             elif purchase_item(person, key, request.POST[key]):
@@ -62,24 +63,64 @@ def purchaseaction(request, user_id):
         return redirect('newzuul:purchaselist.html')  # causes 400 error on runserver
 
 
-
-
-
-
 def additemform(request):
     return render(request, 'newzuul/additemform.html')
 
 
 def additemaction(request):
-    return HttpResponse('you found me!')
-
-
+    if request.POST["keymastername"] == "zuulmaster" and request.POST["gatekeeperpassword"] == "onlyzuul":
+        create_item(request.POST["new_item_name"], request.POST["new_item_price"])
+        return redirect("newzuul:purchaselist.html")  # Still 400 on runserver; must test this out
+    else:
+        return HttpResponse("Something doesn't check out. I don't think 0.0you are the zuulmaster")
 
 
 def adduserform(request):
-    return HttpResponse('you found me!')
+    return render(request, 'newzuul/adduserform.html')
 
 
 def adduseraction(request):
-    return HttpResponse('you found me!')
+    create_consumer(request.POST["new_user_name"], request.POST["new_user_bank"])
+    return redirect("newzuul:purchaselist.html")
 
+# --- Verson 1 API below --- #
+
+
+def v1purchase(request):
+    returndict = {"success": "false", "name": "noname", "item": "noitem", "item_price": -1}
+    name = request.POST["name"]
+    purchase_me = request.POST["item"]
+    person_id = -1
+    item_id = -1
+
+    # make lists
+    consumer_list = consumer.objects.order_by('name')
+    item_list = items.objects.order_by('name')
+
+    # find person in db
+    for person in consumer_list:
+        if name == person.name:
+            person_id = person.id
+    if person_id >= 0:
+        # set our buyer
+        buyer = get_object_or_404(consumer, pk=person_id)
+
+    # find item in db
+    for item in item_list:
+        if purchase_me == item.name:
+            item_id = item.id
+    if item_id >= 0:
+        item_to_purchase = get_object_or_404(items, pk=item.id)
+
+    if buyer and item_id >= 0:
+        purchase_item(buyer, item_id, 1)  # so far will only purchase 1 of them; this may change later
+        returndict["name"] = name
+        returndict["item"] = purchase_me
+        returndict["success"] = "true"
+        returndict["item_price"] = str(item_to_purchase.price)
+
+    returnjson = json.dumps(returndict)
+    return HttpResponse(returnjson)
+
+def v1checkballance(requets):
+    return HttpResponse("you found me yaaaay!!!")

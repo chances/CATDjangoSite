@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import patterns, url
+from django.views.decorators.csrf import csrf_exempt
 
 from newzuul import views
 
@@ -34,4 +35,10 @@ urlpatterns = patterns('',
     #Add a user page
     url(r'^adduseraction/$', views.adduseraction,
         name='adduseraction'),
+
+    #api v1.0
+
+    #purchase an item
+    url(r'^v1/purchase/$', csrf_exempt(views.v1purchase),
+        name='v1purchase')
 )
