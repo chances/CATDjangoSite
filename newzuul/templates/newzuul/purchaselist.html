@@ -20,10 +20,8 @@
                     </div>
                 {% endfor %}
         </ul>
-    </div>
 
-    <div class="col-md-6 col-md-offset-0">
-        <p class="TOG">
+       <p class="TOG">
             As a member of the CAT, a friend of the CAT, or other represenative
             given access to this website, I do solumly swear the following:
         <p>
@@ -47,6 +45,44 @@
         <button type="submit" class="btn btn-default btn-success">
             Purchase these items!
         </button>
+            </form>
+    </div>
+
+    <div class="col-md-6 col-md-offset-0">
+
+        <ul class="list-group">
+            <form action="{% url 'newzuul:addbankaction' person.id %}" method="post">
+            {% csrf_token %}
+                <div class="input-group">
+                    <span class="input-group-addon"> Add monies to bank:</span>
+                    <input type="number" min="0" max="100" step=".01" name="ammount_add_bank" class="form-control" value="0">
+                </div>
+        </ul>
+
+       <p class="TOG">
+            As a member of the CAT, a friend of the CAT, or other represenative
+            given access to this website, I do solumly swear the following:
+        <p>
+
+        <ol>
+            <li class="TOG">
+                Yes, I have either in the recent past, or in the very soon future, have actually, in real life,
+                dropped this much money in the zuul bank.
+            </li>
+            <li class="TOG">
+                If I have not dropped it yet, I will very soon drop money in the zuul bank. As in, like, 30 seconds
+                from now.
+            </li>
+            <li class="TOG">
+                I acknowledge that it is okay to have a negative balance, so long as I pay it off eventually. It is
+                immoral to add money to this list if I have not actually put money in the bank, or will very soon.
+            </li>
+        </ol>
+
+        <button type="submit" class="btn btn-default btn-success">
+            Add this money to my bank please!
+        </button>
+
             </form>
     </div>
 {% endblock content %}

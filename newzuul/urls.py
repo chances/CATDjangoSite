@@ -17,6 +17,10 @@ urlpatterns = patterns('',
         name='purchaseaction'),
 
 
+    #add bank action form
+    url(r'^(?P<user_id>\d+)/addbank/addbankaction/$', views.addbankaction,
+        name='addbankaction'),
+
 
     #Add an item page
     url(r'^additem/$', views.additemform,
