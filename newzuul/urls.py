@@ -42,6 +42,10 @@ urlpatterns = patterns('',
 
     #api v1.0
 
+    #listall function
+    url(r'^v1/listall/$', csrf_exempt(views.v1listall),
+        name='listall'),
+
     #purchase an item
     url(r'^v1/purchase/$', csrf_exempt(views.v1purchase),
         name='v1purchase')

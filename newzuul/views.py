@@ -99,10 +99,19 @@ def adduseraction(request):
 # --- Verson 1 API below --- #
 
 
+def v1listall(request):
+    returndict = {"success": "false"}
+    item_list = items.objects.order_by('name')
+    for item in item_list:
+	returndict[item.name] = str(item.price)
+    returnjson = json.dumps(returndict)
+    return HttpResponse(returnjson)
+
+
 def v1purchase(request):
     returndict = {"success": "false", "name": "noname", "item": "noitem", "item_price": -1}
-    name = request.POST["name"]
-    purchase_me = request.POST["item"]
+    name = str(request.POST["name"]).lower()
+    purchase_me = str(request.POST["item"]).lower()
     person_id = -1
     item_id = -1
 
@@ -112,7 +121,7 @@ def v1purchase(request):
 
     # find person in db
     for person in consumer_list:
-        if name == person.name:
+        if name == str(person.name).lower():
             person_id = person.id
     if person_id >= 0:
         # set our buyer
@@ -120,7 +129,7 @@ def v1purchase(request):
 
     # find item in db
     for item in item_list:
-        if purchase_me == item.name:
+        if purchase_me == str(item.name).lower():
             item_id = item.id
     if item_id >= 0:
         item_to_purchase = get_object_or_404(items, pk=item.id)
