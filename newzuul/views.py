@@ -78,7 +78,7 @@ def purchaseaction(request, user_id):
                 #print exception error on webpage
                 return HttpResponse('Hes dead Jim (purchase_item function ValueError)')
         #return HttpResponse('did it!')
-        return redirect('newzuul:index')  # causes 400 error on runserver
+        return redirect('newzuul:index')
 
 
 def additemform(request):
@@ -88,7 +88,7 @@ def additemform(request):
 def additemaction(request):
     if request.POST["keymastername"] == "zuulmaster" and request.POST["gatekeeperpassword"] == "onlyzuul":
         create_item(request.POST["new_item_name"], request.POST["new_item_price"])
-        return redirect("newzuul:index")  # Still 400 on runserver; must test this out
+        return redirect("newzuul:index")
     else:
         return HttpResponse("Something doesn't check out. I don't think 0.0you are the zuulmaster")
 
