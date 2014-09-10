@@ -52,7 +52,12 @@ def purchaselist(request, user_id):
 
 def addbankaction(request, user_id):
     person = get_object_or_404(consumer, pk=user_id)
-    ammount = request.POST['ammount_add_bank']
+    try:
+        ammount = request.POST['ammount_add_bank']
+    except (MultiValueDictKeyError):
+        for thing in request.POST:
+            thingdict[thing] = request.POST[thing]
+        return HttpResponse(thingdict)
     add_bank(person, ammount)
     return redirect('newzuul:index')
 
@@ -64,7 +69,7 @@ def purchaseaction(request, user_id):
     except (ValueError):
         return HttpResponse(" he's dead Jim (ValueError on person object)")
     else:
-        for key in request:
+        for key in request.POST:
             if key == "csrfmiddlewaretoken":
                 continue
             elif purchase_item(person, key, request.POST[key]):
@@ -93,17 +98,52 @@ def adduserform(request):
 
 
 def adduseraction(request):
+    consumer_list = consumer.objects.order_by('name')
+    for person in consumer_list:
+        if request.POST["new_user_name"] == person.name:
+            return HttpResponse("Please choose a unique username please")
     create_consumer(request.POST["new_user_name"], request.POST["new_user_bank"])
     return redirect("newzuul:index")
 
 # --- Verson 1 API below --- #
 
 
+def v1finduser(request):
+    returndict = {"success": "false"}
+    returndict["name"] = "not found"
+    returndict["bank"] = "not found"
+    name = request.POST["name"]
+    consumer_list = consumer.objects.order_by('name')
+    for person in consumer_list:
+        if name == person.name:
+            #myitem = get_object_or_404(items, item.id)
+            returndict["name"] = str(person.name)
+            returndict["bank"] = str(person.bank)
+            returndict["success"] = "true"
+    returnjson = json.dumps(returndict)
+    return HttpResponse(returnjson)
+
+
+def v1finditem(request):
+    returndict = {"success": "false"}
+    name = request.POST["name"]
+    item_list = items.objects.order_by('name')
+    for item in item_list:
+        if name == item.name:
+            #myitem = get_object_or_404(items, item.id)
+            returndict["name"] = str(item.name)
+            returndict["cost"] = str(item.price)
+            returndict["success"] = "true"
+    returnjson = json.dumps(returndict)
+    return HttpResponse(returnjson)
+
+
 def v1listall(request):
     returndict = {"success": "false"}
     item_list = items.objects.order_by('name')
     for item in item_list:
-	returndict[item.name] = str(item.price)
+        returndict[item.name] = str(item.price)
+    returndict["success"] = "true"
     returnjson = json.dumps(returndict)
     return HttpResponse(returnjson)
 

@@ -40,9 +40,20 @@ urlpatterns = patterns('',
     url(r'^adduseraction/$', views.adduseraction,
         name='adduseraction'),
 
+
+
+
     #api v1.0
 
-    #listall function
+    #find user function
+    url(r'^v1/finduser/$', csrf_exempt(views.v1finduser),
+        name='finduser'),
+
+    #find item function
+    url(r'^v1/finditem/$', csrf_exempt(views.v1finditem),
+        name='finditem'),
+
+    #list all function
     url(r'^v1/listall/$', csrf_exempt(views.v1listall),
         name='listall'),
 

@@ -1,5 +1,4 @@
 {% extends "newzuul/base.html" %}
-
 {% block header %}
     <p> This is the purchase page for {{ person.name }}, your bank is ${{ person.bank }} </p>
 {% endblock header %}
@@ -12,7 +11,7 @@
             </li>
 
             <form action="{% url 'newzuul:purchaseaction' person.id %}" method="post">
-            {% csrf_token %}
+                {% csrf_token %}
                 {% for item in item_list %}
                     <div class="input-group">
                         <span class="input-group-addon"> {{ item.name }}:  ${{ item.price }}, Ammount:</span>
@@ -52,10 +51,10 @@
 
         <ul class="list-group">
             <form action="{% url 'newzuul:addbankaction' person.id %}" method="post">
-            {% csrf_token %}
+                {% csrf_token %}
                 <div class="input-group">
                     <span class="input-group-addon"> Add monies to bank:</span>
-                    <input type="number" min="0" max="100" step=".01" name="ammount_add_bank" class="form-control" value="0">
+                    <input type="number" min="-100" max="100" step=".01" name="ammount_add_bank" class="form-control" value="0">
                 </div>
         </ul>
 
