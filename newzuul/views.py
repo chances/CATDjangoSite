@@ -126,6 +126,8 @@ def v1finduser(request):
 
 def v1finditem(request):
     returndict = {"success": "false"}
+    returndict["name"] = "not found"
+    returndict["cost"] = "cost"
     name = request.POST["name"]
     item_list = items.objects.order_by('name')
     for item in item_list:

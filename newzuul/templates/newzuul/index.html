@@ -12,9 +12,9 @@
             </li>
             {% for person in consumer_list %}
                 {% if person.bank >= 0 %}
-                        <li id="positivebank" class="list-group-item"> <a href="/newzuul/{{ person.id }}/purchase/"> <button type="button" class="btn btn-default btn-success"> <span class="personname"> {{ person.name }} </span> </button> </a> <span class="shortdescription"> Has a bank of:</span> <span class="personbank"> ${{ person.bank }} </span></li>
+                        <li id="positivebank" class="list-group-item"> <a href="/newzuul/{{ person.id }}/purchase/"> <button type="button" class="btn btn-default btn-default" style="background-color: lightgrey"> <span class="personname"> {{ person.name }} </span> </button> </a> <span class="shortdescription"> Has a bank of:</span> <span class="personbank"> ${{ person.bank }} </span></li>
                 {% elif person.bank < 0 %}
-                        <li id="negativebank" class="list-group-item"> <a href="/newzuul/{{ person.id }}/purchase/"> <button type="button" class="btn btn-default btn-success" style="background-color: green"> <span class="personname"> {{ person.name }} </span> </button> </a> <span class="shortdescription"> Has a bank of:</span> <span class="personbank"> ${{ person.bank }} </span></li>
+                        <li id="negativebank" class="list-group-item"> <a href="/newzuul/{{ person.id }}/purchase/"> <button type="button" class="btn btn-default btn-default" style="background-color: EBF0F5"> <span class="personname"> {{ person.name }} </span> </button> </a> <span class="shortdescription"> Has a bank of:</span> <span class="personbank"> ${{ person.bank }} </span></li>
                 {% endif %}
             {% endfor %}
             <li id="negativebank" class="list-group-item"> <a href="/newzuul/adduser/"> <button class="btn btn-default btn-primary">
