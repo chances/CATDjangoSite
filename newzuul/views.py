@@ -99,9 +99,13 @@ def adduserform(request):
 
 def adduseraction(request):
     consumer_list = consumer.objects.order_by('name')
+    # check to see if username already exists
     for person in consumer_list:
         if request.POST["new_user_name"] == person.name:
             return HttpResponse("Please choose a unique username please")
+    # protect against stormcrow
+    if len( str(request.POST["new_user_name"]) ) > 20:
+	return HttpResponse("fixed it stormcrow")
     create_consumer(request.POST["new_user_name"], request.POST["new_user_bank"])
     return redirect("newzuul:index")
 
