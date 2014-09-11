@@ -11,7 +11,7 @@
             {% csrf_token %}
                 <div class="input-group">
                     <span class="input-group-addon"> Soooo, what's your name?: </span>
-                    <input type="text" name="new_user_name" class="form-control">
+                    <input type="text" name="new_user_name" class="form-control" maxlength="20">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon"> How much did you put in initially? (from $0.0 to $999.99): </span>

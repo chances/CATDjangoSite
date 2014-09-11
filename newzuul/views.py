@@ -151,7 +151,7 @@ def v1listall(request):
 
 
 def v1purchase(request):
-    returndict = {"success": "false", "name": "noname", "item": "noitem", "item_price": -1}
+    returndict = {"success": "false", "name": "noname", "item": "noitem", "item_price": "0"}
     name = str(request.POST["name"]).lower()
     purchase_me = str(request.POST["item"]).lower()
     person_id = -1
