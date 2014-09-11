@@ -90,7 +90,7 @@ def additemaction(request):
         create_item(request.POST["new_item_name"], request.POST["new_item_price"])
         return redirect("newzuul:index")
     else:
-        return HttpResponse("Something doesn't check out. I don't think 0.0you are the zuulmaster")
+        return HttpResponse("Something doesn't check out. I don't think you are the zuulmaster")
 
 
 def adduserform(request):
