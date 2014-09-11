@@ -102,7 +102,7 @@ def adduseraction(request):
     # check to see if username already exists
     for person in consumer_list:
         if request.POST["new_user_name"] == person.name:
-            return HttpResponse("Please choose a unique username please")
+            return HttpResponse("Please choose a unique username")
     # protect against stormcrow
     if len( str(request.POST["new_user_name"]) ) > 20:
 	return HttpResponse("fixed it stormcrow")
