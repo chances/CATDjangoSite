@@ -116,10 +116,10 @@ def v1finduser(request):
     returndict = {"success": "false"}
     returndict["name"] = "not found"
     returndict["bank"] = "not found"
-    name = request.POST["name"]
+    name = str(request.POST["name"]).lower()
     consumer_list = consumer.objects.order_by('name')
     for person in consumer_list:
-        if name == person.name:
+        if name == str(person.name).lower():
             #myitem = get_object_or_404(items, item.id)
             returndict["name"] = str(person.name)
             returndict["bank"] = str(person.bank)
@@ -131,11 +131,12 @@ def v1finduser(request):
 def v1finditem(request):
     returndict = {"success": "false"}
     returndict["name"] = "not found"
-    returndict["cost"] = "cost"
-    name = request.POST["name"]
+    returndict["cost"] = "no cost found"
+    name = str(request.POST["name"]).lower()
     item_list = items.objects.order_by('name')
     for item in item_list:
-        if name == item.name:
+        #returndict[item_name] = "searched for <--"
+        if name == str(item.name).lower():
             #myitem = get_object_or_404(items, item.id)
             returndict["name"] = str(item.name)
             returndict["cost"] = str(item.price)
