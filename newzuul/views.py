@@ -34,7 +34,7 @@ def create_consumer(name_in, bank_in):
 
 
 def index(request):
-# show all people and all items (include banks and costs respectively)
+    # show all people and all items (include banks and costs respectively)
     consumer_list = consumer.objects.order_by('name')
     item_list = items.objects.order_by('price')
     context = {'consumer_list': consumer_list,
@@ -43,7 +43,7 @@ def index(request):
 
 
 def purchaselist(request, user_id):
-# purchaselist for person
+    # purchaselist for person
     person = get_object_or_404(consumer, pk=user_id)
     item_list = items.objects.order_by('price')
     context = {'item_list': item_list, 'person': person}
@@ -63,7 +63,7 @@ def addbankaction(request, user_id):
 
 
 def purchaseaction(request, user_id):
-# action page for purchases, redirects to index
+    # action page for purchases, redirects to index
     try:
         person = get_object_or_404(consumer, pk=user_id)
     except (ValueError):
@@ -104,8 +104,8 @@ def adduseraction(request):
         if request.POST["new_user_name"] == person.name:
             return HttpResponse("Please choose a unique username")
     # protect against stormcrow
-    if len( str(request.POST["new_user_name"]) ) > 20:
-	return HttpResponse("fixed it stormcrow")
+    if len(str(request.POST["new_user_name"])) > 20:
+        return HttpResponse("fixed it stormcrow")
     create_consumer(request.POST["new_user_name"], request.POST["new_user_bank"])
     return redirect("newzuul:index")
 
@@ -120,7 +120,7 @@ def v1finduser(request):
     consumer_list = consumer.objects.order_by('name')
     for person in consumer_list:
         if name == str(person.name).lower():
-            #myitem = get_object_or_404(items, item.id)
+            # myitem = get_object_or_404(items, item.id)
             returndict["name"] = str(person.name)
             returndict["bank"] = str(person.bank)
             returndict["success"] = "true"
@@ -191,5 +191,7 @@ def v1purchase(request):
     returnjson = json.dumps(returndict)
     return HttpResponse(returnjson)
 
+
 def v1checkballance(requets):
+    """ Unused so far, depreciated considering finduser does this. """
     return HttpResponse("you found me yaaaay!!!")

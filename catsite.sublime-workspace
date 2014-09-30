@@ -1,0 +1,605 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"update",
+				"update_message"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"d",
+				"def	Function"
+			],
+			[
+				"if",
+				"if	If Condition"
+			],
+			[
+				"def",
+				"def	Function"
+			],
+			[
+				"try",
+				"try	Try/Except/Else"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"comment",
+				"Snippet: Comment"
+			],
+			[
+				"new snippet",
+				"z:AAAPackageDev: New Raw Snippet"
+			],
+			[
+				"snippet",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"emmet",
+				"Emmet: Evaluate Math Expression"
+			],
+			[
+				"archive",
+				"Tasks: Archive"
+			],
+			[
+				"tasks",
+				"Tasks: View as HTML"
+			],
+			[
+				":save",
+				":w - Save"
+			],
+			[
+				"linter settings",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"settings",
+				"Preferences: Settings - Default"
+			],
+			[
+				"default",
+				"Preferences: Settings - Default"
+			],
+			[
+				"project",
+				"Project: Save As"
+			],
+			[
+				"lines",
+				"Emmet: Merge Lines"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"spaces ",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"sspy",
+				"Set Syntax: Python"
+			],
+			[
+				"pref default",
+				"Preferences: Settings - Default"
+			],
+			[
+				"preferenes user",
+				"Preferences: Settings - User"
+			],
+			[
+				"preferences user",
+				"Preferences: Settings - User"
+			],
+			[
+				"prefs",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"task",
+				"Tasks: New document"
+			],
+			[
+				"lint toggle",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"show",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"linter show",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"linter toggle",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"linter: show",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"sl:",
+				"SublimeLinter: Show Errors on Save"
+			],
+			[
+				"linter",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				":sidebar",
+				"View: Toggle Side Bar"
+			],
+			[
+				"anf: ",
+				"ANF: Rename File"
+			],
+			[
+				"newfile",
+				"ANF: New File"
+			],
+			[
+				"instlal",
+				"Package Control: Install Package"
+			],
+			[
+				"code folding",
+				"Code Folding: Fold Tag Attributes"
+			],
+			[
+				"fold",
+				"Code Folding: Fold Tag Attributes"
+			],
+			[
+				"fold all",
+				"Code Folding: Unfold All"
+			],
+			[
+				":0",
+				":0 - BOF"
+			],
+			[
+				":o",
+				":$ - EOF"
+			],
+			[
+				":O",
+				":$ - EOF"
+			],
+			[
+				":$",
+				":$ - EOF"
+			],
+			[
+				"new file",
+				"File: New View into File"
+			],
+			[
+				"snippet: ",
+				"Snippet: hello"
+			],
+			[
+				"settings user",
+				"Preferences: Settings - User"
+			],
+			[
+				"djangosyncdata",
+				"Django: Sync Database"
+			],
+			[
+				"django test",
+				"Django: Test"
+			],
+			[
+				"django run",
+				"Django: Run Server"
+			],
+			[
+				"django",
+				"Django: Run Server"
+			],
+			[
+				"preferences",
+				"Preferences: Browse Packages"
+			],
+			[
+				"brows",
+				"Preferences: Browse Packages"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"sidebar",
+				"View: Toggle Side Bar"
+			]
+		],
+		"width": 584.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/brian/random_development/git_stuff/catsite"
+	],
+	"file_history":
+	[
+		"/home/brian/random_development/git_stuff/catsite/newzuul/templates/newzuul/index.html",
+		"/home/brian/random_development/git_stuff/catsite/newzuul/views.py",
+		"/home/brian/random_development/git_stuff/catsite/doglog/views.py",
+		"/home/brian/random_development/git_stuff/catsite/adminmedia/admindocs/templates/admin_doc/view_index.html",
+		"/home/brian/random_development/git_stuff/catsite/adminmedia/gis/geos/io.py",
+		"/home/brian/random_development/git_stuff/rri_tech/inventory/static/inventory/markdowncss.css",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/templates/scheduler/base.html",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/templates/scheduler/index.html",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/views.py",
+		"/home/brian/random_development/git_stuff/rri_tech/RRI_tech.TODO",
+		"/home/brian/random_development/git_stuff/rri_tech/manage.py",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/templates/scheduler/checkoutreserveform.html",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/templates/scheduler/checkinform.html",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/templates/scheduler/CheckInAction.html",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/admin.py",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/models.py",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/tests.py",
+		"/home/brian/random_development/git_stuff/rri_tech/inventory/tests.py",
+		"/home/brian/random_development/git_stuff/rri_tech/inventory/admin.py~",
+		"/home/brian/random_development/git_stuff/rri_tech/inventory/admin.py",
+		"/home/brian/random_development/git_stuff/rri_tech/rri_tech/wsgi.py",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/static/css/bootstrap.css",
+		"/home/brian/random_development/git_stuff/rri_tech/.gitignore",
+		"/home/brian/.config/sublime-text-3/Packages/User/text.html/Django-{%  %}.sublime-snippet",
+		"/home/brian/random_development/git_stuff/rri_tech/rri_tech_db.sqlite3",
+		"/home/brian/.config/sublime-text-3/Packages/User/text.html/Django-{{  }}.sublime-snippet",
+		"/home/brian/random_development/git_stuff/rri_tech/inventory/models.py",
+		"/home/brian/.config/sublime-text-3/Packages/SublimeLinter/Default (Linux).sublime-keymap",
+		"/home/brian/.config/sublime-text-3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/home/brian/random_development/git_stuff/rri_tech/inventory/views.py",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/templates/scheduler/CheckOutAction.html",
+		"/home/brian/.config/sublime-text-3/Packages/User/PlainTasks.sublime-settings",
+		"/home/brian/.config/sublime-text-3/Packages/PlainTasks/PlainTasks (Linux).sublime-settings",
+		"/home/brian/random_development/git_stuff/rri_tech/README.md",
+		"/home/brian/random_development/git_stuff/rri_tech/LICENSE",
+		"/home/brian/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/brian/.config/sublime-text-3/Packages/User/Distraction Free.sublime-settings",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/__init__.py",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/urls.py",
+		"/home/brian/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/brian/random_development/git_stuff/rri_tech/rri_tech.sublime-project",
+		"/home/brian/random_development/git_stuff/rri_tech/rri_tech/urls.py",
+		"/home/brian/random_development/git_stuff/rri_tech/rri_tech/settings.py",
+		"/home/brian/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/static/fonts/glyphicons-halflings-regular.svg",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/static/fonts/glyphicons-halflings-regular.woff",
+		"/home/untitled.py",
+		"/home/brian/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/brian/.config/sublime-text-3/Packages/AdvancedNewFile/AdvancedNewFile.sublime-settings",
+		"/home/brian/.config/sublime-text-3/Packages/AdvancedNewFile/README.md",
+		"/home/brian/thisismynewfile",
+		"/home/brian/random_development/git_stuff/rri_tech/thisismyfile.php",
+		"/home/brian/.config/sublime-text-3/Packages/Python PEP8 Autoformat/pep8_autoformat.sublime-settings",
+		"/home/brian/.config/sublime-text-3/Packages/User/pep8_autoformat.sublime-settings",
+		"/home/brian/.config/sublime-text-3/Packages/Python PEP8 Autoformat/Default (Linux).sublime-keymap",
+		"/home/brian/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings",
+		"/home/brian/.config/sublime-text-3/Packages/Django Manage Commands/DjangoCommands.sublime-settings",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/static/css/bootstrap-theme.min.css",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/templates/scheduler/Inventorylist_noadmin.html",
+		"/home/brian/.config/sublime-text-3/Packages/User/Random Snippet Testing/hello.sublime-snippet",
+		"/home/brian/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/static/js/bootstrap.min.js",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/static/js/bootstrap.js",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/static/css/bootstrap-theme.css.map",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/static/css/bootstrap-theme.css",
+		"/home/brian/random_development/git_stuff/rri_tech/scheduler/files/admins.json",
+		"/home/brian/random_development/git_stuff/catsite/newzuul/models.py",
+		"/home/brian/random_development/git_stuff/catsite/manage.py"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"/home/brian/random_development/git_stuff/rri_tech/rri_tech",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Decimal",
+			"decimal",
+			"update_message",
+			"index",
+			"update_message",
+			"_",
+			"update_message",
+			"reserveaction",
+			"hidden",
+			"checked_out",
+			"index.html",
+			"()",
+			"date.today",
+			"adminpass",
+			"adminname",
+			"white",
+			"\">",
+			"item_log",
+			"date",
+			"datetime",
+			"python",
+			"line_numbers",
+			"checkoutreserveform",
+			"reserveaction",
+			"jibberish",
+			"body",
+			"Jibberish",
+			"Jibb",
+			"Jibberish",
+			"list_display",
+			"find_under_expand",
+			"find_under_expand_",
+			"list_display",
+			"ctrl+d",
+			"list_display"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"public",
+			"checked_in",
+			"')"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "catsite.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"views",
+				"newzuul/views.py"
+			],
+			[
+				"in",
+				"newzuul/templates/newzuul/index.html"
+			],
+			[
+				"mark",
+				"inventory/static/inventory/markdowncss.css"
+			],
+			[
+				"base",
+				"scheduler/templates/scheduler/base.html"
+			],
+			[
+				"ind",
+				"scheduler/templates/scheduler/index.html"
+			],
+			[
+				"inex",
+				"scheduler/templates/scheduler/index.html"
+			],
+			[
+				"checkoutre",
+				"scheduler/templates/scheduler/checkoutreserveform.html"
+			],
+			[
+				"checkinform",
+				"scheduler/templates/scheduler/checkinform.html"
+			],
+			[
+				"checkin",
+				"scheduler/templates/scheduler/checkinform.html"
+			],
+			[
+				"tests",
+				"scheduler/tests.py"
+			],
+			[
+				"index",
+				"scheduler/templates/scheduler/index.html"
+			],
+			[
+				"admin",
+				"scheduler/admin.py"
+			],
+			[
+				".css",
+				"inventory/static/inventory/markdowncss.css"
+			],
+			[
+				"modle",
+				"scheduler/models.py"
+			],
+			[
+				"checkoutreser",
+				"scheduler/templates/scheduler/checkoutreserveform.html"
+			],
+			[
+				"scheduler/",
+				"scheduler/admin.py"
+			],
+			[
+				"man",
+				"manage.py"
+			],
+			[
+				"todo",
+				"RRI_tech.TODO"
+			],
+			[
+				"re",
+				"README.md"
+			],
+			[
+				"lic",
+				"LICENSE"
+			],
+			[
+				"schedduler/base",
+				"scheduler/templates/scheduler/base.html"
+			],
+			[
+				"urls",
+				"scheduler/urls.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/random_development/git_stuff/rri_tech/rri_tech.sublime-project"
+			],
+			[
+				"rri",
+				"~/random_development/git_stuff/rri_tech/rri_tech.sublime-project"
+			],
+			[
+				"cat",
+				"~/random_development/git_stuff/catsite/catsite.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 224.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
