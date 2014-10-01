@@ -276,9 +276,13 @@
 	],
 	"file_history":
 	[
-		"/home/brian/random_development/git_stuff/catsite/newzuul/templates/newzuul/index.html",
 		"/home/brian/random_development/git_stuff/catsite/newzuul/views.py",
+		"/home/brian/random_development/git_stuff/catsite/newzuul/urls.py",
+		"/home/brian/random_development/git_stuff/catsite/doglog/urls.py",
+		"/home/brian/random_development/git_stuff/catsite/catsite/urls.py~",
+		"/home/brian/random_development/git_stuff/catsite/catsite/urls.py",
 		"/home/brian/random_development/git_stuff/catsite/doglog/views.py",
+		"/home/brian/random_development/git_stuff/catsite/newzuul/templates/newzuul/index.html",
 		"/home/brian/random_development/git_stuff/catsite/adminmedia/admindocs/templates/admin_doc/view_index.html",
 		"/home/brian/random_development/git_stuff/catsite/adminmedia/gis/geos/io.py",
 		"/home/brian/random_development/git_stuff/rri_tech/inventory/static/inventory/markdowncss.css",
@@ -471,6 +475,14 @@
 		"selected_items":
 		[
 			[
+				"urls",
+				"newzuul/urls.py"
+			],
+			[
+				"view",
+				"newzuul/views.py"
+			],
+			[
 				"views",
 				"newzuul/views.py"
 			],
@@ -553,10 +565,6 @@
 			[
 				"schedduler/base",
 				"scheduler/templates/scheduler/base.html"
-			],
-			[
-				"urls",
-				"scheduler/urls.py"
 			]
 		],
 		"width": 0.0
