@@ -272,10 +272,42 @@
 	},
 	"expanded_folders":
 	[
-		"/home/brian/random_development/git_stuff/catsite"
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite"
 	],
 	"file_history":
 	[
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/catsite.sublime-project",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/newzuul/urls.py",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/newzuul/views.py",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/catsite/settings.py",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/README.md",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/static_common/css/markdowncss.css",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/static_common/css/bootstrap.min.css",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/static_common/css/bootstrap.css",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/newzuul/templates/newzuul/purchaselist.html",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/newzuul/templates/newzuul/base.html",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/newzuul/templates/newzuul/index.html",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/gis/tests/geogapp/fixtures/initial_data.json",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/admin/templates/admin/change_list.html",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/comments/templates/comments/list.html",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/LICENSE",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/catsite/publicsettings.py",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/admin/templates/admin/pagination.html",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/admin/templates/registration/password_reset_complete.html",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/admin/templates/registration/password_change_done.html",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/admin/templates/admin/auth/user/change_password.html",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/manage.py",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/staticfiles/management/commands/runserver.py",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/admindocs/templates/admin_doc/bookmarklets.html",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/gis/templates/gis/kml/placemarks.kml",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/redirects/locale/ka/LC_MESSAGES/django.mo",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/admin/static/admin/js/admin/RelatedObjectLookups.js",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/.gitignore",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/auth/backends.py",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/auth/tests/test_basic.py",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/admin/templates/admin/base.html",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/gis/gdal/base.py",
+		"/run/user/1000/gvfs/sftp:host=zuul/var/www/CATDjangoSite/adminmedia/admin/templates/admin/base_site.html",
 		"/home/brian/random_development/git_stuff/catsite/newzuul/views.py",
 		"/home/brian/random_development/git_stuff/catsite/newzuul/urls.py",
 		"/home/brian/random_development/git_stuff/catsite/doglog/urls.py",
@@ -351,7 +383,7 @@
 	],
 	"find":
 	{
-		"height": 22.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -368,6 +400,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"color",
+			"color:",
+			"color: ",
+			"44444",
+			"brian",
+			"/brian",
+			"li.",
+			"li {",
+			"Nova<",
 			"Decimal",
 			"decimal",
 			"update_message",
@@ -430,7 +471,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 21.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -466,7 +507,7 @@
 	"project": "catsite.sublime-project",
 	"replace":
 	{
-		"height": 40.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -475,16 +516,48 @@
 		"selected_items":
 		[
 			[
-				"urls",
-				"newzuul/urls.py"
+				"setting",
+				"catsite/settings.py"
 			],
 			[
 				"view",
 				"newzuul/views.py"
 			],
 			[
+				"url",
+				"newzuul/urls.py"
+			],
+			[
+				"index.htm",
+				"newzuul/templates/newzuul/index.html"
+			],
+			[
+				"list.html",
+				"newzuul/templates/newzuul/purchaselist.html"
+			],
+			[
 				"views",
 				"newzuul/views.py"
+			],
+			[
+				".html",
+				"newzuul/templates/newzuul/base.html"
+			],
+			[
+				"base.html",
+				"newzuul/templates/newzuul/base.html"
+			],
+			[
+				"base",
+				"adminmedia/gis/gdal/base.py"
+			],
+			[
+				"sett",
+				"catsite/settings.py"
+			],
+			[
+				"urls",
+				"newzuul/urls.py"
 			],
 			[
 				"in",
@@ -493,10 +566,6 @@
 			[
 				"mark",
 				"inventory/static/inventory/markdowncss.css"
-			],
-			[
-				"base",
-				"scheduler/templates/scheduler/base.html"
 			],
 			[
 				"ind",

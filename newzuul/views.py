@@ -35,8 +35,8 @@ def create_consumer(name_in, bank_in):
 
 def index(request):
     # show all people and all items (include banks and costs respectively)
-    consumer_list = consumer.objects.order_by('name')
-    item_list = items.objects.order_by('price')
+    consumer_list = consumer.objects.extra( select={'lower_name': 'lower(name)'}).order_by('lower_name')
+    item_list = items.objects.order_by('name')
     context = {'consumer_list': consumer_list,
                'item_list': item_list}
     return render(request, 'newzuul/index.html', context)
@@ -45,7 +45,7 @@ def index(request):
 def purchaselist(request, user_id):
     # purchaselist for person
     person = get_object_or_404(consumer, pk=user_id)
-    item_list = items.objects.order_by('price')
+    item_list = items.objects.order_by('name')
     context = {'item_list': item_list, 'person': person}
     return render(request, 'newzuul/purchaselist.html', context)
 

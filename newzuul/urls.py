@@ -10,7 +10,7 @@ urlpatterns = patterns('',
 
     # a purchase page, will display options for user to purchase
     url(r'^(?P<user_id>\d+)/purchase/$', views.purchaselist,
-         name='purchaselist'),
+        name='purchaselist'),
 
     # purchase lots-o-items for one user
     url(r'^(?P<user_id>\d+)/purchase/purchaseaction/$', views.purchaseaction,
