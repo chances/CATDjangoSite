@@ -5,7 +5,7 @@ from django.utils import timezone
 # Create your models here.
 
 
-class person(models.Model):
+class Person(models.Model):
 
     def __unicode__(self):
         return self.cat_username
@@ -31,7 +31,7 @@ class person(models.Model):
     num_of_no_call_hr = models.IntegerField(default = 0)
 
 class Shift(models.Model):
-    user_id = models.ForeignKey(person)
+    user_id = models.ForeignKey(Person)
 
     start_date_and_time = models.DateTimeField()
 
@@ -42,7 +42,7 @@ class Shift(models.Model):
     missed_flag = models.BooleanField(default = False)
 
 class Availability(models.Model):
-    user_id = models.ForeignKey(person)
+    user_id = models.ForeignKey(Person)
 
 
     start_date_and_time = models.DateTimeField()
