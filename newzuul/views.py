@@ -218,7 +218,9 @@ def v1addbank(requets):
             # set our buyer
             person_to_add_funds_to = get_object_or_404(consumer, pk=person_id)
 
-    add_bank(person_to_add_funds_to, ammount)
+    # addbank if we don't have an error earlier
+    if returndict["error"] is "none":
+        add_bank(person_to_add_funds_to, ammount)
 
     returnjson = json.dumps(returndict)
     return HttpResponse(returnjson)
