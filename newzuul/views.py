@@ -221,6 +221,9 @@ def v1addbank(request):
     # addbank if we don't have an error earlier
     if returndict["error"] is "none":
         add_bank(person_to_add_funds_to, ammount)
+        returndict["name"] = name
+        returndict["ammount_added"] = ammount
+        returndict["success"] = True
 
     returnjson = json.dumps(returndict)
     return HttpResponse(returnjson)
