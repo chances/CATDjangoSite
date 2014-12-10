@@ -192,7 +192,7 @@ def v1purchase(request):
     return HttpResponse(returnjson)
 
 
-def v1addbank(requets):
+def v1addbank(request):
     """add bank via api."""
     returndict = {"success": "false", "name": "noname", "ammount_added": "0", "error": "none"}
     name = str(request.POST["name"]).lower()
