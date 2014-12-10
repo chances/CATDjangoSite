@@ -59,5 +59,9 @@ urlpatterns = patterns('',
 
     # purchase an item
     url(r'^v1/purchase/$', csrf_exempt(views.v1purchase),
-        name='v1purchase')
+        name='v1purchase'),
+
+    # add bank
+    url(r'^v1/addbank/$', csrf_exempt(views.v1addbank),
+        name='v1addbank')
 )

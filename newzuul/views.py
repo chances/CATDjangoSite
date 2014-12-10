@@ -192,6 +192,33 @@ def v1purchase(request):
     return HttpResponse(returnjson)
 
 
-def v1checkballance(requets):
-    """ Unused so far, depreciated considering finduser does this. """
-    return HttpResponse("you found me yaaaay!!!")
+def v1addbank(requets):
+    """add bank via api."""
+    returndict = {"success": "false", "name": "noname", "ammount_added": "0", "error": "none"}
+    name = str(request.POST["name"]).lower()
+    strammount = str(request.POST["ammount"])
+    try:
+        ammount = Decimal(strammount)
+    except InvalidOperation:
+        returndict["error"] = "wrong type entered"
+    except:
+        returndict["error"] = "unknown Decimal exception thrown"
+
+    person_id = -1
+
+    # make lists
+    consumer_list = consumer.objects.order_by('name')
+
+    # find person in db if we have no error so far
+    if returndict["error"] is "none":
+        for person in consumer_list:
+            if name == str(person.name).lower():
+                person_id = person.id
+        if person_id >= 0:
+            # set our buyer
+            person_to_add_funds_to = get_object_or_404(consumer, pk=person_id)
+
+    add_bank(person_to_add_funds_to, ammount)
+
+    returnjson = json.dumps(returndict)
+    return HttpResponse(returnjson)
