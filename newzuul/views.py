@@ -35,7 +35,7 @@ def create_consumer(name_in, bank_in):
 
 def index(request):
     # show all people and all items (include banks and costs respectively)
-    consumer_list = consumer.objects.extra( select={'lower_name': 'lower(name)'}).order_by('lower_name')
+    consumer_list = consumer.objects.extra(select={'lower_name': 'lower(name)'}).order_by('lower_name')
     item_list = items.objects.order_by('name')
     context = {'consumer_list': consumer_list,
                'item_list': item_list}
@@ -75,9 +75,9 @@ def purchaseaction(request, user_id):
             elif purchase_item(person, key, request.POST[key]):
                 continue
             else:
-                #print exception error on webpage
+                # print exception error on webpage
                 return HttpResponse('Hes dead Jim (purchase_item function ValueError)')
-        #return HttpResponse('did it!')
+        # return HttpResponse('did it!')
         return redirect('newzuul:index')
 
 
@@ -119,7 +119,7 @@ def v1finduser(request):
     name = str(request.POST["name"]).lower()
     consumer_list = consumer.objects.order_by('name')
     for person in consumer_list:
-        if name.replace(" ", "") == str(person.name).lower().replace(" ", ""):
+        if name.replace(" ", "") in str(person.name).lower().replace(" ", ""):
             # myitem = get_object_or_404(items, item.id)
             returndict["name"] = str(person.name)
             returndict["bank"] = str(person.bank)
@@ -135,9 +135,9 @@ def v1finditem(request):
     name = str(request.POST["name"]).lower()
     item_list = items.objects.order_by('name')
     for item in item_list:
-        #returndict[item_name] = "searched for <--"
+        # returndict[item_name] = "searched for <--"
         if name.replace(" ", "") in str(item.name).lower().replace(" ", ""):
-            #myitem = get_object_or_404(items, item.id)
+            # myitem = get_object_or_404(items, item.id)
             returndict["name"] = str(item.name)
             returndict["cost"] = str(item.price)
             returndict["success"] = "true"
