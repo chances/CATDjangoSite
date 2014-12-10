@@ -119,7 +119,7 @@ def v1finduser(request):
     name = str(request.POST["name"]).lower()
     consumer_list = consumer.objects.order_by('name')
     for person in consumer_list:
-        if name.replace(" ", "") in str(person.name).lower().replace(" ", ""):
+        if name.replace(" ", "") == str(person.name).lower().replace(" ", ""):
             # myitem = get_object_or_404(items, item.id)
             returndict["name"] = str(person.name)
             returndict["bank"] = str(person.bank)
