@@ -7,7 +7,10 @@ from django.utils import timezone
 
 class person(models.Model):
 
+    """ A person and all things associated with a person. """
+
     def __unicode__(self):
+        """ when we ask for a person, return their username. """
         return self.cat_username
 
     first_name = models.CharField(max_length=50)
@@ -15,5 +18,3 @@ class person(models.Model):
     mcecs_username = models.CharField(max_length=50)
     pdx_username = models.CharField(max_length=50)
     cat_username = models.CharField(max_length=50)
-    preferred_email = models.CharField(max_length=50)
-

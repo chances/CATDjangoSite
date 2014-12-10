@@ -119,7 +119,7 @@ def v1finduser(request):
     name = str(request.POST["name"]).lower()
     consumer_list = consumer.objects.order_by('name')
     for person in consumer_list:
-        if name == str(person.name).lower():
+        if name.replace(" ", "") in str(person.name).lower().replace(" ", ""):
             # myitem = get_object_or_404(items, item.id)
             returndict["name"] = str(person.name)
             returndict["bank"] = str(person.bank)
@@ -136,7 +136,7 @@ def v1finditem(request):
     item_list = items.objects.order_by('name')
     for item in item_list:
         #returndict[item_name] = "searched for <--"
-        if name == str(item.name).lower():
+        if name.replace(" ", "") in str(item.name).lower().replace(" ", ""):
             #myitem = get_object_or_404(items, item.id)
             returndict["name"] = str(item.name)
             returndict["cost"] = str(item.price)
@@ -176,7 +176,7 @@ def v1purchase(request):
 
     # find item in db
     for item in item_list:
-        if purchase_me == str(item.name).lower():
+        if purchase_me.replace(" ", "") in str(item.name).lower().replace(" ", ""):
             item_id = item.id
     if item_id >= 0:
         item_to_purchase = get_object_or_404(items, pk=item.id)
