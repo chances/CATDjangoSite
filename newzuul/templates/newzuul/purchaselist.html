@@ -1,87 +1,86 @@
 {% extends "newzuul/base.html" %}
 {% block header %}
-    <p> Purchase zuulfood <small>{{ person.name }}'s balance is ${{ person.bank }}</small> </p>
+    <p>Purchase zuulfood <small>{{ person.name }}'s balance is ${{ person.bank }}</small></p>
 {% endblock header %}
 
 {% block content %}
-    <div class="col-md-6 col-md-offset-0">
-        <ul class="list-group">
-            <li class="list-group-item">
-                Items for Sale
-            </li>
-
-            <form action="{% url 'newzuul:purchaseaction' person.id %}" method="post">
-                {% csrf_token %}
+    <form action="{% url 'newzuul:purchaseaction' person.id %}" method="post">
+        {% csrf_token %}
+        <div class="panel col-md-6 col-md-offset-0">
+            <div class="panel-heading">Items for Sale</div>
+            <table class="table">
                 {% for item in item_list %}
-                    <div class="input-group">
-                        <span class="input-group-addon"> {{ item.name }}:  ${{ item.price }}, Ammount:</span>
-                        <input type="number" min="0" max="99" name="{{ item.id }}" class="form-control" value="0">
-                    </div>
+                    <tr class="input-group">
+                        <td>{{ item.name }}:  ${{ item.price }}</td>
+                        <td class="input-group">
+                            <span class="input-group-addon">Amount:</span>
+                            <input type="number" min="0" max="99" name="{{ item.id }}" class="form-control" value="0">
+                        </td>
+                    </tr>
                 {% endfor %}
-        </ul>
+            </table>
+            <div class="panel-footer">
+               <p>
+                    As a member of the CAT, a friend of the CAT, or other representative
+                    given access to this website, I do solemnly swear the following:
+                <p>
+                <ol>
+                    <li>
+                        Yes, I am the person purchasing this zuulfood or a person given
+                        <strong>explicit</strong> rights to purchase items for myself or
+                        the person who owns this account on behalf of the person who owns
+                        this account.
+                    </li>
+                    <li>
+                        I do fully intend on paying the zuulmaster bank for this food
+                        either before, during, or after ordering on this website.
+                    </li>
+                    <li>
+                        I am very grateful of this open policy, and will NOT take
+                        advantage of it, less the zuul run empty and I will be to
+                        blame
+                    </li>
+                </ol>
 
-       <p class="TOG">
-            As a member of the CAT, a friend of the CAT, or other representative
-            given access to this website, I do solemnly swear the following:
-        <p>
-        <ol>
-            <li class="TOG">
-                Yes, I am the person purchasing this zuulfood or a person given
-                EXPLICIT rights to purchase items for myself or the person who
-                owns this account on behalf of the person who owns this account.
-            </li>
-            <li class="TOG">
-                I do fully intend on paying the zuulmaster bank for this food
-                either before, during, or after ordering on this website.
-            </li>
-            <li class="TOG">
-                I am very grateful of this open policy, and will NOT take
-                advantage of it, less the zuul run empty and I will be to
-                blame
-            </li>
-        </ol>
+                <button type="submit" class="btn btn-default btn-success">Purchase Items</button>
+            </div>
+        </div>
+    </form>
 
-        <button type="submit" class="btn btn-default btn-success">
-            Purchase Items
-        </button>
-            </form>
-    </div>
-
-    <div class="col-md-6 col-md-offset-0">
-
-        <ul class="list-group">
-            <form action="{% url 'newzuul:addbankaction' person.id %}" method="post">
-                {% csrf_token %}
+    <form action="{% url 'newzuul:addbankaction' person.id %}" method="post">
+        {% csrf_token %}
+        <div class="panel col-md-6 col-md-offset-0">
+            <div class="panel-heading">Deposit Monies to zuulbank</div>
+            <div class="panel-body">
                 <div class="input-group">
-                    <span class="input-group-addon"> Add monies to my zuul balance:</span>
-                    <input type="number" min="-100" max="100" step=".01" name="ammount_add_bank" class="form-control" value="0">
+                    <label for="depositAmount">Amount of monies to add to zuul balance:</label>
+                    <span class="input-group-addon">$</span>
+                    <input id="depositAmount" type="number" min="-100" max="100" step=".01" name="ammount_add_bank" class="form-control" value="0">
                 </div>
-        </ul>
+            </div>
+            <div class="panel-footer">
+                <p>
+                    As a member of the CAT, a friend of the CAT, or other representative
+                    given access to this website, I do solemnly swear the following:
+                <p>
 
-       <p class="TOG">
-            As a member of the CAT, a friend of the CAT, or other representative
-            given access to this website, I do solemnly swear the following:
-        <p>
+                <ol>
+                    <li>
+                        Yes, I have either in the recent past, or will very soon in the future, actually, in real life,
+                        drop this much money in the zuul bank.
+                    </li>
+                    <li>
+                        If I have not dropped money yet, I will very soon drop money in the zuul bank. As in, like, 30 seconds
+                        from now.
+                    </li>
+                    <li>
+                        I acknowledge that it is okay to have a negative balance, so long as I pay it off eventually. It is
+                        immoral to add money with this form if I do not actually intend to drop money in the zuul bank.
+                    </li>
+                </ol>
 
-        <ol>
-            <li class="TOG">
-                Yes, I have either in the recent past, or will very soon in the future, actually, in real life,
-                drop this much money in the zuul bank.
-            </li>
-            <li class="TOG">
-                If I have not dropped money yet, I will very soon drop money in the zuul bank. As in, like, 30 seconds
-                from now.
-            </li>
-            <li class="TOG">
-                I acknowledge that it is okay to have a negative balance, so long as I pay it off eventually. It is
-                immoral to add money with this form if I do not actually intend to drop money in the zuul bank.
-            </li>
-        </ol>
-
-        <button type="submit" class="btn btn-default btn-success">
-            Add Monies
-        </button>
-
-            </form>
-    </div>
+                <button type="submit" class="btn btn-default btn-success">Add Monies</button>
+            </div>
+        </div>
+    </form>
 {% endblock content %}

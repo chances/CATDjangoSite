@@ -1,42 +1,46 @@
 {% extends "newzuul/base.html" %}
 
 {% block header %}
-    <p> Welcome to zuulweb!
-    <small>The zuul's consumer and item index.</small> </p>
+    <p>Welcome to zuulweb!
+    <small>The zuul's consumer and item index.</small></p>
 {% endblock header %}
 
 {% block content %}
-    <center><p style="color: white" > To see the source code for this website, check out <a href="https://github.com/BrianBreniser/CATDjangoSite"> GitHub <a>.</p></center>
-    <div class="col-md-6 col-md-offset-0">
-        <ul class="list-group">
-            <li class="list-group-item" id="darkback">
-                List of Consumers
-                <small>Select your name to make a purchase.</small>
-            </li>
+    <p>To see the source code for this website, check out <a href="https://github.com/BrianBreniser/CATDjangoSite">GitHub</a>.</p>
+    <div class="panel col-md-6 col-md-offset-0">
+        <div class="panel-heading">List of Consumers <small>Select your name to make a purchase.</small></div>
+        <table class="table">
             {% for person in consumer_list %}
                 {% if person.bank >= 0 %}
-                        <li id="positivebank" class="list-group-item"> <a href="/newzuul/{{ person.id }}/purchase/"> <button type="button" class="btn btn-default btn-default" style="background-color: lightgrey"> <span class="personname"> {{ person.name }} </span> </button> </a> <span class="shortdescription"> Has a balance of:</span> <span class="personbank"> ${{ person.bank }} </span></li>
+                    <tr class="person">
+                        <td><a class="btn btn-default" href="/newzuul/{{ person.id }}/purchase/" role="button"><span class="name"> {{ person.name }} </span></a></td>
+                        <td class="balance"><span>Has a balance of:</span> <span class="bank"> ${{ person.bank }} </span></td>
+                    </tr>
                 {% elif person.bank < 0 %}
-                        <li id="negativebank" class="list-group-item"> <a href="/newzuul/{{ person.id }}/purchase/"> <button type="button" class="btn btn-default btn-default" style="background-color: EBF0F5"> <span class="personname"> {{ person.name }} </span> </button> </a> <span class="shortdescription"> Has a balance of:</span> <span class="personbank"> ${{ person.bank }} </span></li>
+                    <tr class="person danger">
+                        <td><a class="btn btn-default" href="/newzuul/{{ person.id }}/purchase/" role="button"><span class="name"> {{ person.name }} </span></a></td>
+                        <td class="balance"><span>Has a balance of:</span> <span class="bank"> ${{ person.bank }} </span></td>
+                    </tr>
                 {% endif %}
             {% endfor %}
-            <li id="negativebank" class="list-group-item"> <a href="/newzuul/adduser/"> <button class="btn btn-default btn-primary">
-                Add a Person
-            </button> </a> </li>
-        </ul>
+        </table>
+        <div class="panel-footer">
+            <a class="btn btn-default btn-primary" href="/newzuul/adduser/" role="button">Add a Person</a>
+        </div>
     </div>
 
-    <div class="col-md-6 col-md-offset-0">
-            <li class="list-group-item" id="darkback">
-                Items for Sale
-            </li>
-        <ul class="list-group">
+    <div class="panel col-md-6 col-md-offset-0">
+        <div class="panel-heading">Items for Sale</div>
+        <table class="table">
             {% for item in item_list %}
-                <li id="consumable" class="list-group-item"> <span class="personname"> {{ item.name }} </span> <span class="shortdescription"> Is priced at:</span> <span class="personbank"> ${{ item.price }} </span></li>
+                <tr class="item">
+                    <td><span class="name"> {{ item.name }} </span></td>
+                    <td><span>Is priced at:</span> <span class="bank"> ${{ item.price }} </span></td>
+                </tr>                
             {% endfor %}
-            <li id="negativebank" class="list-group-item"> <a href="/newzuul/additem/"> <button class="btn btn-default btn-primary">
-                Add an Item
-            </button> </a> </li>
-        </ul>
+        </table>
+        <div class="panel-footer">
+            <a class="btn btn-default btn-primary" href="/newzuul/additem/" role="button">Add an Item</a>
+        </div>
     </div>
 {% endblock content %}
