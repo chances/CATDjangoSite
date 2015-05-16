@@ -2,3 +2,4 @@ catsite/settings.py
 *.pyc
 *~
 db.sqlite3
+*_backup

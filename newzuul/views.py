@@ -9,7 +9,7 @@ from decimal import *
 
 def add_bank(person, ammount):
     """ add arbigrary ammount to a bank. """
-    person.bank = person.bank + round(Decimal(ammount), 2)  # make sure its rounded to 2 places
+    person.bank = person.bank + Decimal(ammount)
     person.save()
     return True
 
@@ -28,6 +28,7 @@ def purchase_item(person, item_id, ammount):
 def deduct_ammount(person, ammount):
     """ deduct an arbitrary ammount from a bank. """
     ammount = round(Decimal(ammount), 2)  # convert incoming num to decimal and round to 2 places
+        # ^^^^^^^^^^^^^^^^^^^^^^^^^ is this a float?????
     person.bank -= ammount
     person.save()
     return True
