@@ -8,11 +8,14 @@ from decimal import *
 
 
 def add_bank(person, ammount):
-    person.bank = person.bank + Decimal(ammount)
+    """ add arbigrary ammount to a bank. """
+    person.bank = person.bank + round(Decimal(ammount), 2)  # make sure its rounded to 2 places
     person.save()
+    return True
 
 
 def purchase_item(person, item_id, ammount):
+    """ wraper function to purchase an item. """
     try:
         item = get_object_or_404(items, pk=item_id)
     except (ValueError):
@@ -21,6 +24,13 @@ def purchase_item(person, item_id, ammount):
         person.bank -= item.price * int(ammount)
         person.save()
         return True
+
+def deduct_ammount(person, ammount):
+    """ deduct an arbitrary ammount from a bank. """
+    ammount = round(Decimal(ammount), 2)  # convert incoming num to decimal and round to 2 places
+    person.bank -= ammount
+    person.save()
+    return True
 
 
 def create_item(name_in, price_in):
