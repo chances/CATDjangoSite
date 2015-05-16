@@ -15,17 +15,15 @@
 
     <style type="text/css">
         html, body { color: #efefef; text-shadow: #666 0 1px 0.25rem; background-color: #222222; }
+        body > div.container > p { text-align: center; }
         h1 { font-size: 30px; text-align: center; text-shadow: #666 0 1px 0.25rem; }
         h1 > small, .panel-heading > small { display: block; color: #efefef; }
-        body > div.container > p { text-align: center; }
+        table td { vertical-align: middle; }
         .panel { color: #000000; text-shadow: none; }
         .panel * { text-shadow: none; }
 
         .panel > table {
             color: #000000;
-        }
-        .panel > table td {
-            vertical-align: middle;
         }
 
         .panel-footer {
@@ -35,13 +33,13 @@
         }
 
         @media (min-width: 992px) {
-            .container > .panel.col-md-6 {
+            .container > .panel.col-md-6, .container > form > .panel.col-md-6 {
                 width: 49%;
             }
-            .container > .panel.col-md-6:first-child {
+            .container > .panel.col-md-6:first-child, .container > form:first-child > .panel.col-md-6 {
                 margin-right: 0.5%;
             }
-            .container > .panel.col-md-6:last-child {
+            .container > .panel.col-md-6:last-child, .container > form:last-child > .panel.col-md-6 {
                 margin-left: 0.5%;
             }
         }
