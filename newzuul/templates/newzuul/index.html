@@ -9,7 +9,7 @@
     <p>To see the source code for this website, check out <a href="https://github.com/BrianBreniser/CATDjangoSite">GitHub</a>.</p>
     <div class="panel col-md-6 col-md-offset-0">
         <div class="panel-heading">List of Consumers <small>Select your name to make a purchase.</small></div>
-        <table class="table">
+        <table class="table table-striped">
             {% for person in consumer_list %}
                 {% if person.bank >= 0 %}
                     <tr class="person">
@@ -25,13 +25,13 @@
             {% endfor %}
         </table>
         <div class="panel-footer">
-            <a class="btn btn-default btn-primary" href="/newzuul/adduser/" role="button">Add a Person</a>
+            <a class="btn btn-block btn-primary" href="/newzuul/adduser/" role="button">Add a Person</a>
         </div>
     </div>
 
     <div class="panel col-md-6 col-md-offset-0">
         <div class="panel-heading">Items for Sale</div>
-        <table class="table">
+        <table class="table table-striped">
             {% for item in item_list %}
                 <tr class="item">
                     <td><span class="name"> {{ item.name }} </span></td>
@@ -40,7 +40,7 @@
             {% endfor %}
         </table>
         <div class="panel-footer">
-            <a class="btn btn-default btn-primary" href="/newzuul/additem/" role="button">Add an Item</a>
+            <a class="btn btn-block btn-primary" href="/newzuul/additem/" role="button">Add an Item</a>
         </div>
     </div>
 {% endblock content %}
