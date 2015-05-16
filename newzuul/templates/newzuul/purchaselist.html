@@ -10,8 +10,9 @@
             <div class="panel-heading">Items for Sale</div>
             <table class="table">
                 {% for item in item_list %}
-                    <tr class="input-group">
-                        <td>{{ item.name }}:  ${{ item.price }}</td>
+                    <tr>
+                        <td>{{ item.name }}:</td>
+                        <td>${{ item.price }}</td>
                         <td class="input-group">
                             <span class="input-group-addon">Amount:</span>
                             <input type="number" min="0" max="99" name="{{ item.id }}" class="form-control" value="0">
@@ -52,10 +53,12 @@
         <div class="panel col-md-6 col-md-offset-0">
             <div class="panel-heading">Deposit Monies to zuulbank</div>
             <div class="panel-body">
-                <div class="input-group">
+                <div class="flex-input-group">
                     <label for="depositAmount">Amount of monies to add to zuul balance:</label>
-                    <span class="input-group-addon">$</span>
-                    <input id="depositAmount" type="number" min="-100" max="100" step=".01" name="ammount_add_bank" class="form-control" value="0">
+                    <div class="input-group narrow">
+                        <span class="input-group-addon">$</span>
+                        <input id="depositAmount" type="number" min="-100" max="100" step=".01" name="ammount_add_bank" class="form-control" value="0">
+                    </div>
                 </div>
             </div>
             <div class="panel-footer">
