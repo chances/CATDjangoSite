@@ -8,22 +8,24 @@
         {% csrf_token %}
         <div class="panel col-md-6 col-md-offset-0">
             <div class="panel-heading">Items for Sale</div>
-            <table class="table">
-                {% for item in item_list %}
-                    <tr>
-                        <td class="fit-to-content">{{ item.name }}:</td>
-                        <td>${{ item.price }}</td>
-                        <td class="row">
-                            <div class="col-md-12">
-                                <div class="input-group">
-                                    <span class="input-group-addon">Amount:</span>
-                                    <input type="number" min="0" max="99" name="{{ item.id }}" class="form-control" value="0">
+            <div class="panel-body">
+                <table class="table">
+                    {% for item in item_list %}
+                        <tr>
+                            <td class="fit-to-content">{{ item.name }}:</td>
+                            <td>${{ item.price }}</td>
+                            <td class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Amount:</span>
+                                        <input type="number" min="0" max="99" name="{{ item.id }}" class="form-control" value="0">
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </table>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
             <div class="panel-footer">
                <p>
                     As a member of the CAT, a friend of the CAT, or other representative

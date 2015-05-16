@@ -5,45 +5,48 @@
 {% endblock header %}
 
 {% block content %}
-    <div class="col-md-6 col-md-offset-0">
-        <ul class="list-group">
-            <form action="{% url 'newzuul:adduseraction' %}" method="post">
-            {% csrf_token %}
-                <div class="input-group">
-                    <span class="input-group-addon"> Your name: </span>
-                    <input type="text" name="new_user_name" class="form-control" maxlength="20" required>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon"> Initial zuul bank balance (from $0.0 to $999.99): </span>
-                    <input ng type="float" name="new_user_bank" class="form-control" min="-100" max="999.99" value="0.0">
-                </div>
-                <p class="TOG">
-                    So, we have to talk about a few things:
-                </p>
-                <ol>
-                    <li class="TOG">
-                        Listen, the zuul is a place where we trust each other. If you put money in, we trust you. But
-                        if you don't put money in; please <strong>do not</strong> claim you did. You are allowed to have a negative
-                        balance.
-                    </li>
-                    <li class="TOG">
-                        If you have a negative balance, <strong>please</strong> pay if off before
-                        the next zuul run. The Zuulmaster needs that money to buy more things and without it, we don't
-                        have a zuul!
-                    </li>
-                    <li class="TOG">
-                        So let's review: Please only add money to your account if you actually dropped money in the
-                        zuul bank. Please pay off negative balances before the next zuul run. Finally, if enough people
-                        <strong>don't</strong> follow these rules, the zuul can't exist.
-                    </li>
-                    <li class="TOG">
-                        We trust that <strong>everyone</strong> follows these rules. Take them seriously before hitting the agree button...
-                    </li>
-                </ol>
-                <button type="submit" class="btn btn-block btn-primary">
-                    I agree to these terms and conditions
-                </button>
-            </form>
-        </ul>
+<form action="{% url 'newzuul:adduseraction' %}" method="post">
+    {% csrf_token %}
+    <div class="panel">
+        <div class="panel-body">
+            <div class="input-group">
+                <span class="input-group-addon"> Your name: </span>
+                <input type="text" name="new_user_name" class="form-control" maxlength="20" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"> Initial zuul bank balance (from $0.0 to $999.99): </span>
+                <input ng type="float" name="new_user_bank" class="form-control" min="-100" max="999.99" value="0.0">
+            </div>
+        </div>
+        <div class="panel-footer">
+            <p>
+                So, we have to talk about a few things:
+            </p>
+            <ol>
+                <li>
+                    Listen, the zuul is a place where we trust each other. If you put money in, we trust you. But
+                    if you don't put money in; please <strong>do not</strong> claim you did. You are allowed to have a negative
+                    balance.
+                </li>
+                <li>
+                    If you have a negative balance, <strong>please</strong> pay if off before
+                    the next zuul run. The Zuulmaster needs that money to buy more things and without it, we don't
+                    have a zuul!
+                </li>
+                <li>
+                    So let's review: Please only add money to your account if you actually dropped money in the
+                    zuul bank. Please pay off negative balances before the next zuul run. Finally, if enough people
+                    <strong>don't</strong> follow these rules, the zuul can't exist.
+                </li>
+                <li>
+                    We trust that <strong>everyone</strong> follows these rules. Take them seriously before hitting the agree button...
+                </li>
+            </ol>
+
+            <button type="submit" class="btn btn-block btn-primary">
+                I agree to these terms and conditions
+            </button>
+        </div>
     </div>
+</form>
 {% endblock content %}

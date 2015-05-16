@@ -9,21 +9,23 @@
     <p>To see the source code for this website, check out <a href="https://github.com/BrianBreniser/CATDjangoSite">GitHub</a>.</p>
     <div class="panel col-md-6 col-md-offset-0">
         <div class="panel-heading">List of Consumers <small>Select your name to make a purchase.</small></div>
-        <table class="table table-striped">
-            {% for person in consumer_list %}
-                {% if person.bank >= 0 %}
-                    <tr class="person">
-                        <td><a class="btn btn-default" href="/newzuul/{{ person.id }}/purchase/" role="button"><span class="name"> {{ person.name }} </span></a></td>
-                        <td class="balance"><span>Has a balance of:</span> <span class="bank"> ${{ person.bank }} </span></td>
-                    </tr>
-                {% elif person.bank < 0 %}
-                    <tr class="person danger">
-                        <td><a class="btn btn-default" href="/newzuul/{{ person.id }}/purchase/" role="button"><span class="name"> {{ person.name }} </span></a></td>
-                        <td class="balance"><span>Has a balance of:</span> <span class="bank"> ${{ person.bank }} </span></td>
-                    </tr>
-                {% endif %}
-            {% endfor %}
-        </table>
+        <div class="panel-body">
+            <table class="table table-striped">
+                {% for person in consumer_list %}
+                    {% if person.bank >= 0 %}
+                        <tr class="person">
+                            <td><a class="btn btn-default" href="/newzuul/{{ person.id }}/purchase/" role="button"><span class="name"> {{ person.name }} </span></a></td>
+                            <td class="balance"><span>Has a balance of:</span> <span class="bank"> ${{ person.bank }} </span></td>
+                        </tr>
+                    {% elif person.bank < 0 %}
+                        <tr class="person danger">
+                            <td><a class="btn btn-default" href="/newzuul/{{ person.id }}/purchase/" role="button"><span class="name"> {{ person.name }} </span></a></td>
+                            <td class="balance"><span>Has a balance of:</span> <span class="bank"> ${{ person.bank }} </span></td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+        </div>
         <div class="panel-footer">
             <a class="btn btn-block btn-primary" href="/newzuul/adduser/" role="button">Add a Person</a>
         </div>
@@ -31,14 +33,16 @@
 
     <div class="panel col-md-6 col-md-offset-0">
         <div class="panel-heading">Items for Sale</div>
-        <table class="table table-striped">
-            {% for item in item_list %}
-                <tr class="item">
-                    <td><span class="name"> {{ item.name }} </span></td>
-                    <td><span>Is priced at:</span> <span class="bank"> ${{ item.price }} </span></td>
-                </tr>                
-            {% endfor %}
-        </table>
+        <div class="panel-body">
+            <table class="table table-striped">
+                {% for item in item_list %}
+                    <tr class="item">
+                        <td><span class="name"> {{ item.name }} </span></td>
+                        <td><span>Is priced at:</span> <span class="bank"> ${{ item.price }} </span></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
         <div class="panel-footer">
             <a class="btn btn-block btn-primary" href="/newzuul/additem/" role="button">Add an Item</a>
         </div>
