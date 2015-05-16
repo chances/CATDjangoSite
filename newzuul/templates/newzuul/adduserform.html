@@ -9,13 +9,14 @@
     {% csrf_token %}
     <div class="panel">
         <div class="panel-body">
-            <div class="input-group">
-                <span class="input-group-addon"> Your name: </span>
-                <input type="text" name="new_user_name" class="form-control" maxlength="20" required>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="new_user_name" class="form-control" maxlength="20" required>
             </div>
-            <div class="input-group">
-                <span class="input-group-addon"> Initial zuul bank balance (from $0.0 to $999.99): </span>
-                <input ng type="float" name="new_user_bank" class="form-control" min="-100" max="999.99" value="0.0">
+            <div class="form-group">
+                <label for="bank">Initial zuul bank balance</label>
+                <input type="number" id="bank" name="new_user_bank" class="form-control" min="-100" max="999.99" step="any" value="0.0">
+                <span class="help-block">(Value from $0.0 to $999.99)</span>
             </div>
         </div>
         <div class="panel-footer">
